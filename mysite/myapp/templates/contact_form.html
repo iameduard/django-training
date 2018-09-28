@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+</head>
+<body>
+	Hola!
+	<h3>Contact Us</h3>
+	{% if form.errors %}
+		<p style="color:red">
+			Please correct the errors {{ form.errors|pluralize }} below</p>
+	{% endif %}
+
+	<form action="" method="post">
+		<table>
+			{{ form.as_table }}
+		</table>
+		{% csrf_token %}
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
