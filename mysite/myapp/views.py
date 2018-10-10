@@ -16,7 +16,7 @@ def search_book(request):
 	return render(request,'searchform.html')
 
 def book_response(request):
-	errors=dict()
+	errors=[]
 	if 'q' in request.GET:
 		q=request.GET['q']
 		if not q:

@@ -3,9 +3,19 @@
     <title>Search Book</title>
 </head>
 <body>
-   <form action="search" method="get">
-      <input type="text"   name="q">
-      <input type="submit" value="search">
-   </form>
+	{% if errors %}
+		<ul>
+			{% for error in errors %}
+			<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>You searched for :<strong>{{query}}</strong></p>
+		{% if book %}
+			<p>Found {{book}}</p>
+		{% else %}
+			<p>No match found</p>
+		{% endif %}
+	{% endif %}
 </body>
 </html>
